@@ -29,6 +29,12 @@ gummies.addEventListener("click", () => {
 let coinsContainer = document.querySelector(".coins-container");
 let moneyForm = document.querySelector(".money-form");
 
+const display = () => {
+  let coin = document.createElement("div");
+  coin.classList.add("coin");
+  coinsContainer.append(coin);
+};
+
 moneyForm.addEventListener("submit", (event) => {
   event.preventDefault();
   let formData = new FormData(moneyForm);
@@ -36,5 +42,6 @@ moneyForm.addEventListener("submit", (event) => {
   let coinType = formData.get("coin");
   for (let i = 1; i <= howMany; i++) {
     coinsContainer.append(coinType);
+    display();
   }
 });
